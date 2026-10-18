@@ -21,11 +21,11 @@ import pandas as pd
 import scipy.signal as signal_scipy
 
 # Datos de la simulación
-u_excel = np.array(pd.read_excel('signal.xlsx', header=None))
-x0, t0, tend, dt, w, h = 0, 0, 15, 1E-3, 7, 3.5
+u = np.array(pd.read_excel('signal.xlsx', header=None))
+x0, t0, tend, dt, w, h = 0, 0, 15, 1E-3, 10, 5
 N_steps = round(tend/dt) + 1
 t = np.linspace(t0, tend, N_steps)
-u = np.reshape(signal_scipy.resample(u_excel, len(t)), -1).real
+u = np.reshape(u,-1)
 
 signals = ['Presion_Cardiovascular']
 
@@ -102,7 +102,7 @@ for i in range(len(signals)):
     plt.ylabel('Respuesta [V]')
     plt.legend(bbox_to_anchor=(0.5, -0.25), loc='center', ncol=3, frameon=False)
     plt.show()
-    fg1.savefig(f"{signals[i]}_Estados_LA.pdf", bbox_inches='tight')
+    fg1.savefig(f"{signals[i]}_Estados_LA_python.pdf", bbox_inches='tight')
 
   # Hipotenso
     fg2 = plt.figure(2)
@@ -117,7 +117,7 @@ for i in range(len(signals)):
     plt.ylabel('Respuesta [V]')
     plt.legend(bbox_to_anchor=(0.5, -0.25), loc='center', ncol=3, frameon=False)
     plt.show()
-    fg2.savefig(f"{signals[i]}_ControlHipotenso.pdf", bbox_inches='tight')
+    fg2.savefig(f"{signals[i]}_ControlHipotenso_python .pdf", bbox_inches='tight')
 
   # Hipertenso
     fg3 = plt.figure(3)
@@ -132,4 +132,4 @@ for i in range(len(signals)):
     plt.ylabel('Respuesta [V]')
     plt.legend(bbox_to_anchor=(0.5, -0.25), loc='center', ncol=3, frameon=False)
     plt.show()
-    fg3.savefig(f"{signals[i]}_ControlHipertenso.pdf", bbox_inches='tight')
+    fg3.savefig(f"{signals[i]}_ControlHipertenso_python.pdf", bbox_inches='tight')
