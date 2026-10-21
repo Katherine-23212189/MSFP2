@@ -1,86 +1,65 @@
 [![Open in MATLAB Online](https://www.mathworks.com/images/responsive/global/open-in-matlab-online.svg)](https://matlab.mathworks.com/open/github/v1?repo=Katherine-23212189/MSFP2)
 
-# Práctica 2. Modelado y control cardiovascular con el modelo de Windkessel
+# Práctica 2: Modelo y control del sistema cardiovascular mediante el modelo Windkessel
 
-## Datos académicos
+## Información de la estudiante
 
-- **Estudiante:** Angelica Ashia Haro Najar
-- **Número de control:** 23210708
-- **Correo institucional:** l23210708@tectijuana.edu.mx
-- **Carrera:** Ingeniería Biomédica
-- **Asignatura:** Modelado de Sistemas Fisiológicos
-- **Docente:** Dr. Paul Antonio Valle Trujillo
-- **Institución:** Tecnológico Nacional de México, Instituto Tecnológico de Tijuana
+Katherine Coria Camacho [23212189]; l23212189@tijuana.tecnm.mx
 
-## Introducción
+Modelado de Sistemas Fisiológicos
 
-El modelado matemático permite estudiar el comportamiento de los sistemas fisiológicos a través de representaciones que facilitan su análisis y simulación. En el área cardiovascular, el modelo de Windkessel constituye una herramienta para representar la relación entre la presión arterial y el flujo sanguíneo mediante elementos que describen las propiedades resistivas, elásticas e inerciales del sistema circulatorio.
+Ingeniería Biomédica
 
-En esta práctica se utiliza el modelo de Windkessel de cuatro elementos para analizar tres condiciones cardiovasculares: normotensión, hipotensión e hipertensión. A partir de sus parámetros se obtienen las funciones de transferencia correspondientes y se estudia la respuesta dinámica de cada sistema.
+## Docente
 
-También se emplean herramientas de simulación y programación para evaluar el comportamiento en lazo abierto y lazo cerrado, así como el desempeño de controladores PID orientados a reducir las diferencias entre las respuestas de los sistemas hipotenso e hipertenso y la respuesta normotensa de referencia.
+Dr. Paul Antonio Valle Trujillo; paul.valle@tectijuana.edu.mx
 
-## Objetivos de la práctica
+Departamento de Ingeniería Eléctrica y Electrónica, Tecnológico Nacional de México/IT Tijuana, Blvd. Alberto Limón Padilla s/n, Tijuana, C.P. 22454, B.C., México.
 
-1. Obtener las funciones de transferencia de los modelos cardiovascular normotenso, hipotenso e hipertenso.
-2. Formular las ecuaciones integro-diferenciales que describen la dinámica del sistema.
-3. Determinar el error en estado estacionario y evaluar la estabilidad en lazo abierto.
-4. Implementar el modelo en Simulink/Simscape y simular su respuesta ante una señal aleatoria uniforme con mínimo de -0.2 V, máximo de 1 V, semilla de 106 y tiempo de muestreo de 0.5 s.
-5. Ajustar las ganancias de controladores PID para aproximar las respuestas hipotensa e hipertensa al comportamiento normotenso de referencia.
-6. Comparar las respuestas en lazo abierto y en lazo cerrado mediante simulaciones en Python, utilizando Visual Studio Code como entorno de desarrollo.
+## Descripción de la asignatura
 
-## Fundamento del modelo fisiológico
+El modelado de sistemas fisiológicos permite representar matemáticamente distintos procesos del cuerpo humano para estudiar su comportamiento y comprender la interacción entre sus componentes. En Ingeniería Biomédica, estas representaciones son útiles para analizar fenómenos fisiológicos, desarrollar herramientas de simulación y evaluar estrategias de control aplicables a sistemas biológicos.
 
-El modelo de Windkessel de cuatro elementos representa determinadas propiedades del sistema vascular mediante una analogía con un circuito eléctrico. Sus parámetros son:
+La asignatura de Modelado de Sistemas Fisiológicos integra conocimientos de electrónica, matemáticas, programación, fisiología e ingeniería de control. Mediante modelos computacionales y analogías entre circuitos eléctricos y sistemas fisiológicos, es posible obtener modelos matemáticos, estudiar la estabilidad de los sistemas y predecir su respuesta ante diferentes condiciones de operación.
 
-| Parámetro | Significado fisiológico |
-|---|---|
-| `Z` | Impedancia característica del sistema vascular |
-| `C` | Distensibilidad arterial |
-| `R` | Resistencia vascular periférica |
-| `L` | Inertancia arterial |
+En esta práctica se aplican estos principios al estudio del sistema cardiovascular mediante el modelo de Windkessel de cuatro elementos. Se utilizan herramientas de MATLAB, Simulink y Python para desarrollar el análisis matemático, realizar simulaciones y evaluar el desempeño de controladores PID.
 
-La combinación de estos elementos permite describir la dinámica de la presión y el flujo sanguíneo. En la representación de espacio de estados se consideran dos variables principales: el flujo a través de la inertancia arterial y la presión asociada a la distensibilidad arterial.
+## Objetivos
 
-A partir del modelo matemático se analiza el comportamiento de las siguientes condiciones:
+1. Obtener las funciones de transferencia correspondientes a los sistemas cardiovasculares normotenso, hipotenso e hipertenso.
+2. Formular el modelo matemático mediante las ecuaciones integro-diferenciales que describen la dinámica del sistema.
+3. Analizar la estabilidad de los modelos cardiovasculares en lazo abierto.
+4. Calcular el error en estado estacionario de los sistemas estudiados.
+5. Simular el comportamiento del modelo cardiovascular en Simulink/Simscape mediante una señal aleatoria uniforme con mínimo de -0.2 V, máximo de 1 V, semilla de 106 y tiempo de muestreo de 0.5 s.
+6. Sintonizar las ganancias de controladores PID para reducir el error entre las respuestas de los sistemas hipotenso e hipertenso y la respuesta normotensa de referencia.
+7. Analizar y comparar las respuestas en lazo abierto y en lazo cerrado mediante las simulaciones del modelo cardiovascular.
+8. Implementar en Python, utilizando Visual Studio Code, las funciones de transferencia y los controladores PID para estudiar la respuesta de los sistemas en lazo abierto y en lazo cerrado.
 
-- **Normotenso:** se utiliza como referencia para evaluar las demás respuestas.
-- **Hipotenso:** representa el comportamiento del modelo bajo los parámetros asociados a una condición de presión arterial reducida.
-- **Hipertenso:** representa el comportamiento del modelo bajo los parámetros asociados a una condición de presión arterial elevada.
+## Descripción detallada del sistema
 
-Las funciones de transferencia obtenidas permiten estudiar la relación entre la entrada y la salida de cada modelo, así como comparar sus respuestas dinámicas. Posteriormente, se incorporan controladores PID para evaluar la reducción del error respecto al sistema normotenso.
+En esta práctica se estudia el modelo de Windkessel de cuatro elementos, utilizado para representar características dinámicas del sistema cardiovascular mediante una analogía con circuitos eléctricos. El modelo considera la impedancia característica (Z), la distensibilidad arterial (C), la resistencia vascular periférica (R) y la inertancia arterial (L).
 
-## Metodología computacional
+A partir de estos parámetros se obtienen las funciones de transferencia de los sistemas normotenso, hipotenso e hipertenso, lo que permite analizar y comparar sus respuestas dinámicas. También se estudian las ecuaciones que describen el comportamiento del modelo, su estabilidad en lazo abierto y el error en estado estacionario.
 
-El desarrollo de la práctica se divide en tres etapas:
+Finalmente, se diseñan controladores PID para reducir las diferencias entre las respuestas de los sistemas hipotenso e hipertenso y la respuesta normotensa de referencia. Las simulaciones en MATLAB, Simulink y Python permiten observar el comportamiento de los modelos y evaluar el efecto de la realimentación sobre la respuesta del sistema cardiovascular.
 
-1. **Análisis matemático:** formulación del modelo, obtención de las funciones de transferencia y evaluación de la estabilidad y el error en estado estacionario.
-2. **Simulación del sistema:** implementación del modelo cardiovascular en MATLAB y Simulink/Simscape para observar su respuesta ante la señal de entrada establecida.
-3. **Diseño y evaluación del control:** implementación en Python de las funciones de transferencia y de los controladores PID, con comparación de las respuestas en lazo abierto y en lazo cerrado mediante Visual Studio Code.
+Palabras clave: Sistema cardiovascular; Modelo de Windkessel; Presión arterial; Función de transferencia; Controlador PID.
 
-Esta metodología permite relacionar el modelo matemático con los resultados de simulación y analizar el efecto del control sobre las condiciones hipotensas e hipertensas.
+## Lista de archivos incluidos en el repositorio
 
-## Contenido del repositorio
-
-Los archivos del repositorio reúnen el desarrollo matemático, las simulaciones y la implementación computacional de la práctica:
-
-- **MATLAB (`.mlx`):** desarrollo y documentación de los cálculos realizados.
-- **Simulink (`.slx`):** modelo utilizado para simular el comportamiento cardiovascular.
-- **Python (`.py`):** scripts para el análisis de las funciones de transferencia y la simulación de los controladores PID en Visual Studio Code.
-- **Parámetros de control:** valores de las ganancias PID utilizadas en las simulaciones.
-- **Resultados gráficos:** representaciones de las respuestas de los modelos y comparación entre lazo abierto y lazo cerrado.
-- **Análisis matemático:** documentación de las ecuaciones integro-diferenciales, las funciones de transferencia, el error en estado estacionario y la estabilidad.
-- **Modelo fisiológico ilustrativo:** representación gráfica del sistema cardiovascular, si se incluye como parte de la entrega.
-
-**Palabras clave:** 
-Sistema cardiovascular; modelo de Windkessel; presión arterial; función de transferencia; control PID.
+1. Cuaderno computacional de MATLAB [.mlx].
+2. Modelo de Simulink [.slx].
+3. Scripts de Python desarrollados en Visual Studio Code [.py].
+4. Archivo o imagen con los parámetros y las ganancias de los controladores PID.
+5. Imágenes y documentos de las simulaciones [.pdf y .png].
+6. Análisis matemático: funciones de transferencia de los sistemas normotenso, hipotenso e hipertenso, ecuaciones integro-diferenciales, estabilidad y error en estado estacionario.
 
 ## Referencias
 
-[1] P. A. Valle, *Syllabus para Modelado de Sistemas Fisiológicos*. Tecnológico Nacional de México, Instituto Tecnológico de Tijuana, 2025. Disponible en: https://biomath.xyz/course/
+[1] P. A. Valle, Syllabus para Modelado de Sistemas Fisiológicos, Tecnológico Nacional de México / Instituto Tecnológico de Tijuana, Tijuana, B.C., México, 2025. Permalink: https://biomath.xyz/course/
 
-[2] M. C. Khoo, *Physiological Control Systems: Analysis, Simulation, and Estimation*, 2.ª ed. IEEE Press, 2018, sección 4, p. 93.
+[2] M. C. Khoo, Physiological Control Systems: Analysis, Simulation, and Estimation, 2nd ed. Piscataway, New Jersey, USA: IEEE Press, 2018, Section 4, Page 93.
 
-[3] N. S. Nise, *Control Systems Engineering*, 8.ª ed. John Wiley & Sons, 2020.
+[3] N. S. Nise, Control Systems Engineering, 8th ed. Hoboken, New Jersey, USA: John Wiley & Sons, 2020.
 
-[4] T. Kind, T. J. Faes, J. W. Lankhaar, A. Vonk-Noordegraaf y M. Verhaegen, "Estimation of three-and four-element Windkessel parameters using subspace model identification", *IEEE Transactions on Biomedical Engineering*, vol. 57, núm. 7, pp. 1531-1538, julio de 2010. https://doi.org/10.1109/TBME.2010.2041351
+[4] T. Kind, T. J. Faes, J. W. Lankhaar, A. Vonk-Noordegraaf & M. Verhaegen, "Estimation of three-and four-element Windkessel parameters using subspace model identification", IEEE Transactions on Biomedical Engineering, vol. 57, issue 7, pp. 1531-1538, July 2010. https://doi.org/10.1109/TBME.2010.2041351
