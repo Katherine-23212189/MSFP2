@@ -51,7 +51,8 @@ Palabras clave: Sistema cardiovascular; Modelo de Windkessel; Presión arterial;
 4. Archivo de datos en Excel usado para Visual Studio Code [.xlsx].
 5. Archivo o imagen con los parámetros y las ganancias de los controladores PID.
 6. Imágenes y documentos de las simulaciones [.pdf y .png].
-7. Análisis matemático: funciones de transferencia de los sistemas normotenso, hipotenso e hipertenso, ecuaciones integro-diferenciales, estabilidad y error en estado estacionario.
+7. Diagrama en BioRender [.pdf]. 
+8. Análisis matemático: funciones de transferencia de los sistemas normotenso, hipotenso e hipertenso, ecuaciones integro-diferenciales, estabilidad y error en estado estacionario.
 
 ## Referencias
 
