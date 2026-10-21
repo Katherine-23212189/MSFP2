@@ -45,12 +45,13 @@ Palabras clave: Sistema cardiovascular; Modelo de Windkessel; Presión arterial;
 
 ## Lista de archivos incluidos en el repositorio
 
-1. Cuaderno computacional de MATLAB [.mlx].
+1. Cuaderno computacional de MATLAB [.mlx y .pdf].
 2. Modelo de Simulink [.slx].
 3. Scripts de Python desarrollados en Visual Studio Code [.py].
-4. Archivo o imagen con los parámetros y las ganancias de los controladores PID.
-5. Imágenes y documentos de las simulaciones [.pdf y .png].
-6. Análisis matemático: funciones de transferencia de los sistemas normotenso, hipotenso e hipertenso, ecuaciones integro-diferenciales, estabilidad y error en estado estacionario.
+4. Archivo de datos en Excel usado para Visual Studio Code [.xlsx].
+5. Archivo o imagen con los parámetros y las ganancias de los controladores PID.
+6. Imágenes y documentos de las simulaciones [.pdf y .png].
+7. Análisis matemático: funciones de transferencia de los sistemas normotenso, hipotenso e hipertenso, ecuaciones integro-diferenciales, estabilidad y error en estado estacionario.
 
 ## Referencias
 
